@@ -4,6 +4,12 @@
     "slug": "momentum-investment",
     "version": "0.1.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0b0d10"
+    },
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
