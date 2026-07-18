@@ -6,6 +6,7 @@ import Layout from './components/Layout'
 import About from './routes/About'
 import Home from './routes/Home'
 import NotFound from './routes/NotFound'
+import Privacy from './routes/Privacy'
 import StrategyPage from './routes/StrategyPage'
 
 import './index.css'
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/" element={<Home />} />
           <Route path="/strategies/:id" element={<StrategyPage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
