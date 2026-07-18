@@ -134,6 +134,10 @@ export default function HomeScreen({
       </ScrollView>
 
       <View style={styles.footer}>
+        <Text style={styles.disclaimer}>
+          Educational tool — not investment advice. Past performance is not
+          indicative of future results.
+        </Text>
         <Pressable
           style={({ pressed }) => [styles.confirm, pressed && styles.confirmPressed]}
           onPress={onConfirm}
@@ -376,6 +380,13 @@ const styles = StyleSheet.create({
     color: '#8a93a0',
     fontSize: 12,
     lineHeight: 16,
+  },
+  disclaimer: {
+    color: '#5e6671',
+    fontSize: 11,
+    lineHeight: 15,
+    textAlign: 'center',
+    marginBottom: 10,
   },
   confirm: {
     backgroundColor: '#7ed4a3',
