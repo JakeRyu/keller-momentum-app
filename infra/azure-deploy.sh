@@ -83,7 +83,13 @@ echo "→ Container registry..."
 az acr create -g "$RG" -n "$ACR" --sku Basic --admin-enabled true -o none
 
 echo "→ Container Apps environment..."
-az containerapp env create -g "$RG" -n "$ENV_NAME" -l "$LOCATION" -o none
+# `az containerapp env create` is NOT safely idempotent: re-running it
+# generates a fresh Log Analytics workspace and PUTs the environment,
+# which both leaks workspaces and can fail transiently. Only create when
+# the environment doesn't exist yet (same guard pattern as the app below).
+if ! az containerapp env show -g "$RG" -n "$ENV_NAME" >/dev/null 2>&1; then
+    az containerapp env create -g "$RG" -n "$ENV_NAME" -l "$LOCATION" -o none
+fi
 
 # ---------------------------------------------------------------------
 # Build + push image (server-side build via ACR Tasks — no local docker
