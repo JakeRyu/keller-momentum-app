@@ -525,18 +525,18 @@ export const ASSET_CLASSES: Record<AssetClassCode, AssetClassDefinition> = {
     usDefault: 'IWD',
     ukAlternatives: [
       {
-        ticker: 'IUSV.L',
-        name: 'iShares S&P 500 Value UCITS',
-        ccy: 'USD',
-        dist: 'Acc',
-        note: 'S&P 500 Value, not Russell 1000 Value — closest UCITS proxy',
-      },
-      {
         ticker: 'IWVL.L',
         name: 'iShares Edge MSCI World Value Factor UCITS',
         ccy: 'USD',
         dist: 'Acc',
         note: 'Global value, not US-only',
+      },
+      {
+        ticker: 'IUSV.L',
+        name: 'iShares S&P 500 Value UCITS',
+        ccy: 'USD',
+        dist: 'Acc',
+        note: 'Delisted on Yahoo Finance as of 2026-06 — use IWVL.L instead',
       },
     ],
   },
