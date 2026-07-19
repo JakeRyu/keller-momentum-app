@@ -62,8 +62,9 @@ export default function About() {
         </p>
         <p>
           All strategies use the original Keller US ticker universe. The
-          companion mobile app supports a UK UCITS substitution layer; web
-          will follow.
+          companion iPhone app adds a UK UCITS substitution layer and
+          per-date decisions; the web tool intentionally stays with the
+          original US paper universe as an educational preview.
         </p>
       </section>
 

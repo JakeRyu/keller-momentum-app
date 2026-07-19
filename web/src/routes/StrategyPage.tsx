@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 
+import AppPromo from '../components/AppPromo'
 import DecisionTool from '../components/DecisionTool'
 import { findStrategy, type Strategy } from '../strategies'
 
@@ -49,6 +50,8 @@ export default function StrategyPage() {
         </div>
         <DecisionTool strategy={strategy} />
       </section>
+
+      <AppPromo />
 
       <p className="back-link">
         <Link to="/">← All strategies</Link>
