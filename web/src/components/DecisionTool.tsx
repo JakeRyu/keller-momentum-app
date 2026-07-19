@@ -8,6 +8,7 @@ import {
 import type { Strategy } from '../strategies'
 
 import AllocationsBlock from './AllocationsBlock'
+import DecisionSkeleton from './DecisionSkeleton'
 import PaaProtectionPicker from './PaaProtectionPicker'
 import ScoreSection from './ScoreSection'
 
@@ -46,13 +47,11 @@ export default function DecisionTool({ strategy }: { strategy: Strategy }) {
     <div className="decision">
       {isPaa && <PaaProtectionPicker value={paaA} onChange={setPaaA} />}
 
-      {loading && !decision && !error && (
-        <p className="muted">Fetching decision…</p>
-      )}
+      {loading && <DecisionSkeleton strategy={strategy} />}
 
-      {error && <pre className="error-box">{error}</pre>}
+      {!loading && error && <pre className="error-box">{error}</pre>}
 
-      {decision && <DecisionCard decision={decision} />}
+      {!loading && !error && decision && <DecisionCard decision={decision} />}
     </div>
   )
 }
