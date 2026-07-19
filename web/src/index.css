@@ -843,6 +843,103 @@ hr {
   margin: 0;
 }
 
+/* ─── App funnel (AppPromo + Home "Take it with you") ────────────── */
+
+.app-promo {
+  border: var(--rule-thin);
+  padding: 22px 26px;
+  margin: 32px 0 0;
+  max-width: 720px;
+}
+.app-promo__tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--red);
+  margin: 0 0 10px;
+}
+.app-promo__body {
+  font-size: 16px;
+  line-height: 1.55;
+  font-style: italic;
+  max-width: 58ch;
+  margin: 0 0 14px;
+}
+.app-promo__cta {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--muted);
+  padding: 6px 14px;
+}
+
+.app-section {
+  border-top: var(--rule-heavy);
+  margin-top: 48px;
+  padding-top: 24px;
+}
+.app-section__title {
+  font-family: var(--mono);
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+}
+.app-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: var(--rule-thin);
+  border-left: var(--rule-thin);
+  margin-bottom: 24px;
+}
+.app-compare__col {
+  border-right: var(--rule-thin);
+  border-bottom: var(--rule-thin);
+  padding: 20px 22px;
+}
+.app-compare__label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+.app-compare__col--app .app-compare__label {
+  color: var(--red);
+}
+.app-compare__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.app-compare__col li {
+  font-size: 15px;
+  padding: 7px 0;
+  border-top: 1px solid rgba(10, 10, 10, 0.15);
+}
+.app-compare__col li:first-of-type {
+  border-top: 0;
+}
+.app-compare__col--app li::before {
+  content: '■ ';
+  color: var(--red);
+  font-size: 11px;
+}
+
+@media (max-width: 720px) {
+  .app-compare {
+    grid-template-columns: 1fr;
+  }
+}
+
 .not-found {
   text-align: center;
   padding: 80px 0;
